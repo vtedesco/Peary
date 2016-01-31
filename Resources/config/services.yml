@@ -1,0 +1,4 @@
+services:
+#    vted_peary.example:
+#        class: Vted\PearyBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

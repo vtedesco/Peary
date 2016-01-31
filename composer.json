@@ -1,0 +1,30 @@
+{
+    "name" : "vtedesco/Peary",
+    "description" : "A demo bundle",
+    "type" : "symfony-bundle",
+    "license":      "MIT",
+    "authors" : [{
+        "name" : "vivien Tedesco"
+    }],
+    "keywords" : [
+        "shipping"
+    ],
+    "license" : [
+        "MIT"
+    ],
+    "require" : {
+    },
+    "autoload" : {
+        "psr-0" : {
+            "Company\\DemoBundle" : ""
+        }
+    },
+    "target-dir" : "Company/DemoBundle",
+    "repositories" : [{
+    }],
+    "extra" : {
+    "branch-alias" : {
+            "dev-master" : "some_version-dev"
+        }
+    }
+}
