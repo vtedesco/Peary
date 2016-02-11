@@ -1,3 +1,7 @@
+vted_peary_errorLog:
+    resource: "@VtedPearyBundle/Resources/config/routing/errorLog.yml"
+    prefix:   /errorlog
+
 vted_peary_homepage:
-    path:     /hello/{name}
+    path:     /
     defaults: { _controller: VtedPearyBundle:Default:index }

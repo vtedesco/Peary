@@ -1,0 +1,27 @@
+<?php
+
+namespace Vted\PearyBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * ErrorLog
+ */
+class ErrorLog
+{
+    /**
+     * @var integer
+     */
+    private $id;
+
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+}

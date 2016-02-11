@@ -1,5 +1,5 @@
 {
-    "name" : "vtedesco/Peary",
+    "name" : "vted/Peary",
     "description" : "A demo bundle",
     "type" : "symfony-bundle",
     "license":      "MIT",
@@ -7,7 +7,7 @@
         "name" : "vivien Tedesco"
     }],
     "keywords" : [
-        "shipping"
+        "shipping","symfony2","monolog"
     ],
     "license" : [
         "MIT"
@@ -16,10 +16,10 @@
     },
     "autoload" : {
         "psr-0" : {
-            "Company\\DemoBundle" : ""
+            "Vted\\PearyBundle" : ""
         }
     },
-    "target-dir" : "Company/DemoBundle",
+    "target-dir" : "vted/Peary",
     "repositories" : [{
     }],
     "extra" : {

@@ -1,1 +1,18 @@
-Hello {{ name }}!
+{% extends 'VtedPearyBundle::layout.html.twig' %}
+
+{% block header %}
+    <ol class="breadcrumb">
+        <li class="active"><i class="fa fa-home"></i> Peary</li>
+    </ol>
+
+    <h1>
+        Homepage
+    </h1> 
+{% endblock header %}
+
+{% block content -%}
+    Welcome to PearyBundle !
+    <ul>
+        <li><a href="{{ path('vted_peary_errorlog_exception') }}"> Error Logs</a></li>
+    </ul>
+{% endblock %}

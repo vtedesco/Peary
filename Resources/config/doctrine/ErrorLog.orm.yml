@@ -1,0 +1,33 @@
+Vted\PearyBundle\Entity\ErrorLog:
+    type: entity
+    table: peary_errorLog
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        createDate:
+            type: date
+        username:
+            type: string
+            nullable: true
+        userid:
+            type: integer
+            nullable: true
+        url:
+            type: string
+            nullable: true
+        ip:
+            type: string
+            nullable: true
+        referer:
+            type: string
+            nullable: true
+        message:
+            type: string
+            nullable: true
+        code:
+            type: string
+            nullable: true

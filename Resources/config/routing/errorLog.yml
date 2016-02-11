@@ -1,0 +1,7 @@
+vted_peary_errorlog_monolog:
+    path:     /monolog
+    defaults: { _controller: "VtedPearyBundle:ErrorLog:monolog" }
+
+vted_peary_errorlog_exception:
+    path:     /
+    defaults: { _controller: "VtedPearyBundle:ErrorLog:exception" }

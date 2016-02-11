@@ -1,0 +1,9 @@
+{% set route = app.request.get('_route') %}
+<ul class="nav nav-tabs">
+    <li {% if route == 'vted_peary_errorlog_exception' %}class="active"{% endif %}>
+        <a href="{{ path('vted_peary_errorlog_exception') }}">Listener</a>
+    </li>
+    <li {% if route == 'vted_peary_errorlog_monolog' %}class="active"{% endif %}>
+        <a href="{{ path('vted_peary_errorlog_monolog') }}">Monolog</a>
+    </li>
+</ul>
