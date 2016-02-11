@@ -20,7 +20,6 @@
             "Vted\\PearyBundle" : ""
         }
     },
-    "target-dir" : "vted/Peary",
     "repositories" : [{
     }],
     "extra" : {
