@@ -1,5 +1,5 @@
 {
-    "name" : "vted/Peary",
+    "name" : "vted/peary",
     "description" : "A demo bundle",
     "type" : "symfony-bundle",
     "license":      "MIT",
