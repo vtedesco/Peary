@@ -4,26 +4,23 @@
     "type" : "symfony-bundle",
     "license":      "MIT",
     "authors" : [{
-        "name" : "vivien Tedesco"
+        "name" : "Vivien Tedesco"
     }],
     "keywords" : [
         "shipping","symfony2","monolog"
-    ],
-    "license" : [
-        "MIT"
     ],
     "require" : {
     },
     "minimum-stability": "dev",
     "autoload" : {
-        "psr-0" : {
-            "Vted\\PearyBundle" : ""
+        "psr-4" : {
+            "Vted\\PearyBundle\\" : ""
         }
     },
     "repositories" : [{
     }],
     "extra" : {
-    "branch-alias" : {
+        "branch-alias" : {
             "dev-master" : "1.0-dev"
         }
     }
