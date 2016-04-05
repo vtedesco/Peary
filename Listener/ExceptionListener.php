@@ -59,7 +59,7 @@ class ExceptionListener
             $log->setIp($request->getClientIp());
             $log->setReferer($request->headers->get('referer'));
 
-            if( in_array($log->getCode(), array('404','500'))){
+            if( in_array($log->getCode(), array('0','404','500'))){
                 $this->em->persist($log);
                 $this->em->flush(); 
             }
