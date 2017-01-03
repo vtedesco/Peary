@@ -1,0 +1,44 @@
+.peary body{
+    background-color: #475058;
+    color: white;
+}
+
+.peary h1 {
+    padding-bottom: 10px;
+}
+
+.peary a {
+    color: #02adea;
+}
+
+.peary .ariane{
+    background-color: #fff;
+    padding: 10px 0;
+}
+
+.peary .ariane .brand{
+    color: #333;
+}
+.peary .ariane .brand i{
+    color: #02adea;
+}
+
+.peary .ariane .menu{
+    color: #333;
+}
+
+.peary .ariane .breadcrumb{
+    background-color: transparent;
+    margin: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    display: inline-block;
+}
+
+.peary .alert-content{
+    background-color: white;
+    color: #333;
+}
+.peary .code{
+    font-family: monospace;
+}

@@ -7,7 +7,7 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\Event;
-use Symfony\Component\Security\Core\SecurityContext;
+use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 use Doctrine\ORM\EntityManager;
 
 use Vted\PearyBundle\Entity\ErrorLog;
@@ -17,7 +17,7 @@ class ExceptionListener
     protected $securityContext;
     protected $em;
 
-    public function __construct(SecurityContext $securityContext, EntityManager $entityManager) {
+    public function __construct(TokenStorage $securityContext, EntityManager $entityManager) {
         $this->securityContext = $securityContext;
         $this->em = $entityManager;
     }

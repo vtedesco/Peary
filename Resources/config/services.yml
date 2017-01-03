@@ -2,8 +2,6 @@ services:
     # Error Manager
     peary.exception_listener:
         class: Vted\PearyBundle\Listener\ExceptionListener
-        arguments:
-            securityContext: "@security.context"
-            entityManager: "@doctrine.orm.default_entity_manager"
+        arguments: ['@security.token_storage', '@doctrine.orm.default_entity_manager']
         tags:
             - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }

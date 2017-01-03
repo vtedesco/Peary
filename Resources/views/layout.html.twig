@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="peary">
     <head>
         <meta charset="utf-8">
         <meta name="author" content="Vted">
@@ -9,12 +9,33 @@
         <title>{% block title %}Peary Admin{% endblock %}</title>
         
         {% block stylesheets %}
-            <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+            {% stylesheets '@VtedPearyBundle/Resources/assets/css/main.css' filter="cssrewrite"  output='css/peary.css' %}
+                <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,600' rel='stylesheet' type='text/css'>
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+                <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+
         {% endblock %}
     </head>
     <body>
+
+    <nav class="ariane">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <span class="brand">
+                        <i class="fa fa-ship" aria-hidden="true"></i> PearyBundle
+                    </span>
+                    {% block breadcrumb %}
+                    {% endblock breadcrumb %}
+                </div>
+                <div class="col-md-4 menu">
+                    loged as : {{ app.user }}
+                </div>
+            </div>
+        </div>
+    </nav>
 
     <div class="container">
         {% block header %}

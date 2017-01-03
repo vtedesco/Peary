@@ -1,30 +1,41 @@
 {% extends 'VtedPearyBundle::layout.html.twig' %}
 
-{% block header %}
+{% block breadcrumb %}
     <ol class="breadcrumb">
         <li><a href="{{ path('vted_peary_homepage') }}"><i class="fa fa-home"></i> Peary</a></li>
         <li class="active">Error Logs</li>
     </ol>
+{% endblock %}
 
+{% block header %}
     <h1>
         Error Logs by monolog
     </h1> 
 {% endblock header %}
 
 {% block content -%}
+
     {% include 'VtedPearyBundle:ErrorLog:nav.html.twig' %}
 
-    <a href="{{ path('vted_peary_errorlog_monolog') }}?all=true" class="btn btn-default"> Voir tous</a>
-    <table class="table">
-        {% for log in logs %}
-            <tr>
-                <td style="min-width:180px">
-                    {{ log.date}}
-                    <br>
-                    {{ log.type}}
-                </td>
-                <td><code>{{ log.content}}</code></td>
-            </tr>
-        {% endfor %}
-    </table>
+    <div class="alert alert-content">
+        <a href="{{ path('vted_peary_errorlog_monolog') }}?all=true" class="btn btn-default btn-sm"> Display All</a>
+        <div class="table-responsive">
+            <table class="table">
+                {% for log in logs %}
+                    <tr>
+                        <td style="min-width:180px">
+                            {{ log.date}}
+                            <br>
+                            {% if "ERROR" in log.type %}
+                                <span class="label label-danger">{{ log.type }}</span>
+                            {% else %}
+                                {{ log.type }}
+                            {% endif %}
+                        </td>
+                        <td class="code">{{ log.content}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    </div>
 {% endblock %}
