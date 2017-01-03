@@ -8,7 +8,15 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 class ErrorLogController extends Controller
 {
     public function monologAction(Request $request) {
-        $logFile = file_get_contents($this->get('kernel')->getRootDir().'../../app/logs/prod.log');
+
+        if(file_exists ( $this->get('kernel')->getRootDir().'../../app/logs/prod.log' )){
+            // Symfony2
+            $logFile = file_get_contents($this->get('kernel')->getRootDir().'../../app/logs/prod.log');
+
+        }else{
+            // Symfony3
+            $logFile = file_get_contents($this->get('kernel')->getRootDir().'../../var/logs/prod.log');
+        }
 
         $logs = explode("\n", $logFile);
         $logs = array_reverse($logs);

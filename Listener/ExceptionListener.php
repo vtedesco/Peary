@@ -7,19 +7,18 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Symfony\Component\EventDispatcher\EventDispatcher;
 use Symfony\Component\EventDispatcher\Event;
-use Symfony\Component\Security\Core\Authentication\Token\Storage\TokenStorage;
 use Doctrine\ORM\EntityManager;
 
 use Vted\PearyBundle\Entity\ErrorLog;
 
 class ExceptionListener
 {
-    protected $securityContext;
+    protected $container;
     protected $em;
 
-    public function __construct(TokenStorage $securityContext, EntityManager $entityManager) {
-        $this->securityContext = $securityContext;
-        $this->em = $entityManager;
+    public function __construct($container) {
+        $this->container = $container;
+        $this->em = $container->get('doctrine.orm.entity_manager');
     }
 
     /**
@@ -40,9 +39,9 @@ class ExceptionListener
             $request = $event->getRequest();
 
             // Current User
-            if($this->securityContext->getToken() && $this->securityContext->isGranted('ROLE_USER')) {
-                $log->setUsername($this->securityContext->getToken()->getUser()->getUsername());
-                $log->setUserid($this->securityContext->getToken()->getUser()->getId());
+            if ($this->container->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_REMEMBERED')) {
+                $log->setUsername($this->container->get('security.context')->getUser()->getUsername());
+                $log->setUserid($this->container->get('security.context')->getUser()->getId());
             } else {
                 $log->setUsername(null);
             }
