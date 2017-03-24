@@ -2,6 +2,10 @@ vted_peary_errorLog:
     resource: "@VtedPearyBundle/Resources/config/routing/errorLog.yml"
     prefix:   /errorlog
 
+vted_peary_email:
+    resource: "@VtedPearyBundle/Resources/config/routing/email.yml"
+    prefix:   /email
+
 vted_peary_homepage:
     path:     /
     defaults: { _controller: VtedPearyBundle:Default:index }

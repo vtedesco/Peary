@@ -12,7 +12,6 @@ class ErrorLogController extends Controller
         if(file_exists ( $this->get('kernel')->getRootDir().'../../app/logs/prod.log' )){
             // Symfony2
             $logFile = file_get_contents($this->get('kernel')->getRootDir().'../../app/logs/prod.log');
-
         }else{
             // Symfony3
             $logFile = file_get_contents($this->get('kernel')->getRootDir().'../../var/logs/prod.log');

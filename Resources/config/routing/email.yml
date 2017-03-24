@@ -1,0 +1,3 @@
+vted_peary_email_index:
+    path:     /index
+    defaults: { _controller: "VtedPearyBundle:Email:index" }
